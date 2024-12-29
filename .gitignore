@@ -1,0 +1,4 @@
+# Ignore virtual environments
+env1/
+env2/
+env3/
