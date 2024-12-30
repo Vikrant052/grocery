@@ -1,7 +1,7 @@
 # Ignore virtual environments
-env1/
-env2/
-env3/
+# env1/
+# env2/
+# env3/
 
 # Other files to ignore
 *.pyc
@@ -9,7 +9,7 @@ __pycache__/
 
 # Ignore other unnecessary files
 *.log
-*.sqlite3
+# *.sqlite3
 
 # Ignore IDE/editor files
 .idea/
