@@ -6,13 +6,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = ['id', 'first_name','last_name', 'email', 'phone'] 
 
-
-class RegisterSerialzers(serializers.ModelSerializer):
-    class Meta:
-        model = CustomUser
-        fields = ( 'first_name','last_name', 'email', 'phone') 
         
-
 
 class RegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True)
@@ -47,4 +41,12 @@ class RegistrationSerializer(serializers.ModelSerializer):
             phone=validated_data['phone'],
             password=validated_data['password']
         )
+        
+class LoginSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length=255, required=True)
+    password = serializers.CharField(max_length=128, required=True, write_only=True)
+
+    class Meta:
+        model = CustomUser
+        fields = ('email', 'password')
         
